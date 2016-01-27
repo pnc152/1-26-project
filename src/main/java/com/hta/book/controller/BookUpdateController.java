@@ -3,6 +3,8 @@ package com.hta.book.controller;
 import java.io.IOException;
 import java.sql.SQLException;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -39,7 +41,7 @@ public class BookUpdateController {
       
    }
    @RequestMapping(value="/bookupdate", method=RequestMethod.POST)
-   public String submitted(@ModelAttribute BookDto dto){
+   public String submitted(@ModelAttribute BookDto dto, HttpServletRequest req){
       try{
          MultipartFile file = dto.getUpFile();//uploadDto.getUpFile()의 type이 MultipartFile이므로 MultipartFile로 받아준다.
          /*
@@ -47,7 +49,7 @@ public class BookUpdateController {
                WebUtils.getRealPath(req.getSession().getServletContext(), "/upload");//WebUtils.getRealPath는 실제 경로를 전달해준다. 즉, upload폴더의 위치를 알아 낼수 있다.
                */
          
-         String path = "D:/pnc/Downloads/final2/ProjectSample2-master/src/main/webapp/upload";
+         String path = req.getSession().getServletContext().getRealPath("/") + "/upload";
          BookImgDao uploadDao = new BookImgDao();
          
          uploadDao.writeFile(file, path, file.getOriginalFilename());

@@ -52,7 +52,7 @@ public class BookInputController {
 					WebUtils.getRealPath(req.getSession().getServletContext(), "/upload");//WebUtils.getRealPath�뒗 �떎�젣 寃쎈줈瑜� �쟾�떖�빐以��떎. 利�, upload�뤃�뜑�쓽 �쐞移섎�� �븣�븘 �궪�닔 �엳�떎.
 					*/
 			
-			String path = "D:/pnc/Downloads/final2/ProjectSample2-master/src/main/webapp/upload";
+			String path = req.getSession().getServletContext().getRealPath("/") + "/upload";
 			BookImgDao uploadDao = new BookImgDao();
 			uploadDao.writeFile(file, path, file.getOriginalFilename());
 			dto.setBook_img(file.getOriginalFilename());

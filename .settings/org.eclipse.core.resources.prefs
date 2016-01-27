@@ -2,6 +2,7 @@ eclipse.preferences.version=1
 encoding//src/main/java/com/hta/book/controller/BookInputController.java=UTF-8
 encoding//src/main/java/com/hta/book/service/BookService.java=UTF-8
 encoding//src/main/java/com/hta/book/service/BookServiceImpl.java=UTF-8
+encoding//src/main/java/com/hta/studyroom/controller/ReservationController.java=UTF-8
 encoding//src/main/java/mybatis/BookManager.java=UTF-8
 encoding//src/main/webapp/WEB-INF/views/board/list.jsp=UTF-8
 encoding//src/main/webapp/css/style.css=UTF-8
